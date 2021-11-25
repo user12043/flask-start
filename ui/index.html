@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaskStart</title>
+</head>
+<body>
+<h1>MAIN PAGE</h1>
+<a href="/John">Go to hello</a><br>
+<a href="/get_sum/5">Go to sum</a><br>
+<a href="/admin">Go to admin</a><br>
+<a href="/json">Go to json</a><br>
+<hr>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" id="the_file" name="the_file">
+    <button type="submit">Send</button>
+</form>
+<script src="js/index.js"></script>
+</body>
+</html>
