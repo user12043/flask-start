@@ -8,6 +8,9 @@ import os
 
 from flask import Flask
 
+from . import auth
+from . import db
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -34,5 +37,8 @@ def create_app(test_config=None):
     @app.route("/hello")
     def hello():
         return "Hello, World!"
+
+    db.register_db_things(app)
+    app.register_blueprint(auth.bp)
 
     return app
