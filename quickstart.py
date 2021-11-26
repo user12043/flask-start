@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # created by me60338 on 11/25/21 - 3:15 PM
-# part of project flaskstart
+# part of project flask-start
 from flask import Flask, url_for, send_from_directory, request, redirect, abort
 from markupsafe import escape
 from werkzeug.utils import secure_filename
