@@ -7,13 +7,13 @@ from flask import Flask, url_for, send_from_directory, request, redirect, abort
 from markupsafe import escape
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__, static_url_path="", static_folder="ui")
+app = Flask(__name__, static_url_path="", static_folder="quickstart-ui")
 
 
 @app.route("/")
 def index():
     print(f"connection from: {request.remote_addr}")
-    return send_from_directory("ui", "index.html")
+    return send_from_directory("quickstart-ui", "index.html")
 
 
 @app.route("/<name>")  # name is string
@@ -48,7 +48,7 @@ def admin():
 def error_401(error):
     print(error)
     return "<h1>Error 401: HOOP! Nereye müdür?<h1/>", 401
-    # resp = make_response(send_from_directory("ui", "error_401.html"))
+    # resp = make_response(send_from_directory("quickstart-ui", "error_401.html"))
     # resp.headers["X-HAHO"] = "GG"
     # return resp
 
@@ -70,5 +70,6 @@ with app.test_request_context():
 
 if __name__ == "__main__":
     print("""run with: 
-     $ source ./env
+     $ export FLASK_APP=quickstart
+     $ export FLASK_ENV=development
      $ flask run""")
