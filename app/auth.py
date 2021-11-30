@@ -96,4 +96,4 @@ def login_required(view):
             return redirect(url_for("auth.login"))  # url for view "login" under blueprint "auth"
         return view(**kwargs)
 
-    return wrapped_view()
+    return wrapped_view
